@@ -1,0 +1,17 @@
+DATA: problemsolving.dat;
+VARIABLES: subject tooth X Z Y1 Y2 Y3 Y4 blnteeth; 
+ORDINAL: Y1 Y2 Y3 Y4;
+NOMINAL: Z;
+CLUSTERID: subject;
+FIXED: Z;
+MISSING: 99999;
+MODEL: Y1 ~ X Z Y2 Y3 Y4;
+SEED: 90291;
+NIMPS: 5;
+BURN: 4000;
+THIN: 1000;
+CHAINS: 4 processors 4;
+OPTIONS: psr;
+OUTFILE: ipms.csv;
+# SAVE: stacked0 =  imps.csv; #  Stata;
+# SAVE: separate =  imp*.csv; # Mplus;
