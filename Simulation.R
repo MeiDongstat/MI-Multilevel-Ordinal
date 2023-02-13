@@ -282,7 +282,7 @@ X_jomo=data.frame(rep(1,dim(simdat_misy)[1]),simdat_misy[,c("X", "Z")])
 
 colnames(X_jomo)[1] <- "const"
 
-imp <- jomo(Y=Y_jomo, X=X_jomo, clus = simdat_misy$subject, nburn = 2000, nbetween = 1000, nimp = 5)
+imp <- jomo(Y=Y_jomo, X=X_jomo, clus = simdat_misy$subject, nburn = 4000, nbetween = 1000, nimp = 5)
 
 imp.list <- imputationList(split(imp, imp$Imputation)[-1])
 
@@ -301,7 +301,7 @@ X_jomo_wN=data.frame(rep(1,dim(simdat_misy)[1]),simdat_misy[,c("X", "Z", "blntee
 
 colnames(X_jomo_wN)[1] <- "const"
 
-imp_wN <- jomo(Y=Y_jomo, X=X_jomo_wN, clus = simdat_misy$subject, nburn = 2000, nbetween = 1000, nimp = 5)
+imp_wN <- jomo(Y=Y_jomo, X=X_jomo_wN, clus = simdat_misy$subject, nburn = 4000, nbetween = 1000, nimp = 5)
 
 imp.list_wN <- imputationList(split(imp_wN, imp_wN$Imputation)[-1])
 
